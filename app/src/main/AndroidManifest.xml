@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Contactos">
+        android:theme="@style/Theme.Mascotas">
 
         <activity android:name="com.virsantillan1.mascotas.Favoritos"
             android:parentActivityName="com.virsantillan1.mascotas.MainActivity">
