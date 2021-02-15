@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Contactos</string>
+    <string name="nombre">Mía</string>
+    <string name="tel">3815192371</string>
+    <string name="email">virsantillan98@hotmail.com.ar</string>
+    <string name="emaildescr">Icono Email</string>
+    <string name="teldesc">Icono Telefono</string>
+    <string name="pnombre">nombre</string>
+    <string name="rank">Ranking</string>
+    <string name="pemail">email</string>
+    <string name="like">Like btn</string>
+    <string name="menu_about">Menú</string>
+    <string name="menu_settings">Configuración</string>
+    <string name="toolbar">Petagram</string>
+
+</resources>

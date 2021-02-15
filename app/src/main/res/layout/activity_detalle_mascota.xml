@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvFavoritos"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/mtop"
+    android:layout_marginTop="@dimen/margin_end"
+    card_view:cardCornerRadius="@dimen/corner">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/layout"
+        android:layout_height="@dimen/layout"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_below="@id/miActionBar"
+        >
+
+        <ImageView
+            android:id="@+id/imgFotoDetalle"
+            android:layout_width="@dimen/img"
+            android:layout_height="@dimen/img"
+            android:layout_marginBottom="@dimen/mtop"
+            android:src="@drawable/perro1"
+            android:layout_gravity="center"
+            android:contentDescription="@string/pnombre" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnLike"
+                android:layout_width="@dimen/imgbtn"
+                android:layout_height="@dimen/imgbtn"
+                android:background="@drawable/hueso"
+                android:contentDescription="@string/like"
+                android:layout_marginEnd="@dimen/mleft"
+                />
+
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre"
+                android:textSize="@dimen/nombre"
+                android:textStyle="bold" />
+
+
+
+            <ImageView
+                android:id="@+id/huesocolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/huesocolor"
+                android:layout_marginStart="@dimen/margin_end"
+                android:contentDescription="@string/rank" />
+
+            <TextView
+                android:id="@+id/tvRank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rank"
+                android:textSize="@dimen/rank"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nombre_contacto">30sp</dimen>
+    <dimen name="nombre">20sp</dimen>
+    <dimen name="mtop">10dp</dimen>
+    <dimen name="mleft">15dp</dimen>
+    <dimen name="corner">4dp</dimen>
+    <dimen name="img">300dp</dimen>
+    <dimen name="imgbtn">30dp</dimen>
+    <dimen name="rank">15sp</dimen>
+    <dimen name="actionbar">4dp</dimen>
+    <dimen name="layout">350dp</dimen>
+    <dimen name="margin_end">70dp</dimen>
+    <dimen name="marginaction">200dp</dimen>
+
+
+</resources>
