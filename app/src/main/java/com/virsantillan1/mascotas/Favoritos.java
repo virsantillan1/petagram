@@ -10,6 +10,9 @@ import android.view.KeyEvent;
 import androidx.appcompat.widget.Toolbar;
 
 
+import com.virsantillan1.mascotas.adapter.MascotasAdaptador;
+import com.virsantillan1.mascotas.pojo.Mascota;
+
 import java.util.ArrayList;
 
 
@@ -37,8 +40,6 @@ public class Favoritos extends AppCompatActivity {
         listaMascotas.setLayoutManager(llm);
         inicializarListaMascotas();
         inicializarAdaptador();
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public MascotasAdaptador adaptador;
@@ -52,11 +53,11 @@ public class Favoritos extends AppCompatActivity {
 
         mascotas = new ArrayList<>();
 
-        mascotas.add(new Mascota(R.drawable.perro3, "Mía", "9"));
-        mascotas.add(new Mascota(R.drawable.gato1, "Odin", "7"));
-        mascotas.add(new Mascota(R.drawable.perro1, "Ciro", "6"));
-        mascotas.add(new Mascota(R.drawable.gato2,"Ralf", "6"));
-        mascotas.add(new Mascota(R.drawable.perro2,"Rex", "5"));
+        mascotas.add(new Mascota(R.drawable.dogperfil, "Felipe", "9"));
+        mascotas.add(new Mascota(R.drawable.cat2, "Odin", "7"));
+        mascotas.add(new Mascota(R.drawable.do1, "Ciro", "6"));
+        mascotas.add(new Mascota(R.drawable.dog2,"Ralf", "6"));
+        mascotas.add(new Mascota(R.drawable.dog3,"Hanna", "5"));
     }
 
 

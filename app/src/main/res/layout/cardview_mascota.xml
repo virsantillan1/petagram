@@ -19,12 +19,12 @@
 
         <ImageView
             android:id="@+id/imgFoto"
-            android:layout_width="@dimen/img"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/img"
-            android:layout_marginBottom="@dimen/mtop"
-            android:src="@drawable/perro1"
             android:layout_gravity="center"
-            android:contentDescription="@string/pnombre" />
+            android:layout_marginBottom="@dimen/mtop"
+            android:contentDescription="@string/pnombre"
+            android:src="@drawable/dog3" />
 
         <LinearLayout
             android:layout_width="match_parent"

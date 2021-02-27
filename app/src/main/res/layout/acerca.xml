@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActivityAcerca">
+
+
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/mtop"
+         android:layout_below="@id/miActionBar">
+
+        <TextView
+            android:id="@+id/bio"
+            android:layout_width="@dimen/img"
+            android:layout_height="wrap_content"
+            android:text="@string/infoBio"
+            android:layout_below="@+id/miActionBar"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/mtop"
+
+            />
+
+        <TextView
+            android:id="@+id/bio2"
+            android:layout_width="@dimen/img"
+            android:layout_height="wrap_content"
+            android:text="@string/infoBio2"
+            android:layout_below="@+id/bio"
+            android:layout_marginTop="@dimen/mtop"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -23,7 +23,7 @@
             android:layout_width="@dimen/img"
             android:layout_height="@dimen/img"
             android:layout_marginBottom="@dimen/mtop"
-            android:src="@drawable/perro1"
+            android:src="@drawable/dog3"
             android:layout_gravity="center"
             android:contentDescription="@string/pnombre" />
 
