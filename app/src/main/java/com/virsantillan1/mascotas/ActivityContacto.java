@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.virsantillan1.mascotas.javaMail.JavaMailAPI;
+
 public class ActivityContacto extends AppCompatActivity {
 
     EditText nombre;
@@ -18,6 +20,7 @@ public class ActivityContacto extends AppCompatActivity {
     EditText mensaje;
     TextView asunto;
     Button btn1;
+    String sEmail, sPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +36,9 @@ public class ActivityContacto extends AppCompatActivity {
         toolbar = findViewById(R.id.miActionBar);
         setSupportActionBar(toolbar);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
+        /* btn1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 String enviarEmail = email.getText().toString();
                 String enviarAsunto = asunto.getText().toString();
                 String enviarMensaje = mensaje.getText().toString();
@@ -57,8 +60,15 @@ public class ActivityContacto extends AppCompatActivity {
                 finish();
             }
 
-        });
+        }); */
 
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendMail();
+            }
+        });
     }
 
 
@@ -69,6 +79,15 @@ public class ActivityContacto extends AppCompatActivity {
             startActivity(intent);
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    private void sendMail() {
+        String mMail = email.getText().toString().trim();
+        String mMensaje = mensaje.getText().toString();
+        String mAsunto = nombre.getText().toString().trim();
+
+        JavaMailAPI javaMailAPI = new JavaMailAPI(this, mMail,mMensaje,mAsunto);
+        javaMailAPI.execute();
     }
 }
 

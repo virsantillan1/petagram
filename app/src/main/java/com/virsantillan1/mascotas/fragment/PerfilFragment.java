@@ -58,4 +58,5 @@ public class PerfilFragment extends Fragment {
         perfiles.add(new Perfil(R.drawable.perfil5, "8"));
         perfiles.add(new Perfil(R.drawable.perfil6, "7"));
     }
+
 }
