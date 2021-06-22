@@ -2,6 +2,7 @@ package com.virsantillan1.mascotas.pojo;
 
 
 public class Perfil {
+    private int id;
     private int foto;
     private String rank;
 
@@ -25,4 +26,8 @@ public Perfil(int foto, String rank) {
     public int getFoto() { return foto; }
 
     public void setFoto(int foto) { this.foto = foto; }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 }

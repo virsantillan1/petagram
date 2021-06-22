@@ -1,6 +1,8 @@
 package com.virsantillan1.mascotas.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.virsantillan1.mascotas.Favoritos;
+import com.virsantillan1.mascotas.db.ConstructorMascotas;
 import com.virsantillan1.mascotas.pojo.Mascota;
 import com.virsantillan1.mascotas.R;
 
@@ -27,25 +31,39 @@ public class MascotasAdaptador extends RecyclerView.Adapter<MascotasAdaptador.Ma
         this.activity = activity;
     }
 
-    @NonNull
+    public ArrayList<Mascota> getMascotas() {
+        return mascotas;
+    }
+
+
     @Override
-    public MascotaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MascotaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_mascota, parent, false); //"Da vida" al layout"
         return new MascotaViewHolder(v);
     }
 
     //Asocia cada elemento de la lista con cada view
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull MascotaViewHolder mascotaViewHolder, int position) {
-        Mascota mascota = mascotas.get(position);
+    public void onBindViewHolder(final MascotaViewHolder mascotaViewHolder, int position) {
+        final Mascota mascota = mascotas.get(position);
+
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
         mascotaViewHolder.tvNombreCard.setText(mascota.getNombre());
-        mascotaViewHolder.tvRankCard.setText(mascota.getRank());
+        mascotaViewHolder.tvRankCard.setText(" " +Integer.toString(mascota.getRank()) );
 
         mascotaViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Toast.makeText(activity, "Agregaste a favoritos a " + mascota.getNombre(),Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+
+                Toast.makeText(activity, "Indicaste que te gusta "+ mascota.getNombre() + " ", Toast.LENGTH_SHORT).show();
+
+                int nuevoclick = 0;
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darRankMascota(mascota);
+
+                mascotaViewHolder.tvRankCard.setText(String.valueOf(constructorMascotas.obtenerRank(mascota)));
+
             }
         });
 
@@ -63,7 +81,7 @@ public class MascotasAdaptador extends RecyclerView.Adapter<MascotasAdaptador.Ma
         private final TextView tvRankCard;
         private final ImageButton btnLike;
 
-        public MascotaViewHolder(@NonNull View itemView) {
+        public MascotaViewHolder(View itemView) {
             super(itemView);
             imgFoto = itemView.findViewById(R.id.imgFoto);
             tvNombreCard = itemView.findViewById(R.id.tvNombreCard);

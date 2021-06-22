@@ -6,7 +6,7 @@
     <string name="emaildescr">Icono Email</string>
     <string name="teldesc">Icono Telefono</string>
     <string name="pnombre">nombre</string>
-    <string name="rank">Ranking</string>
+    <string name="rank">0</string>
     <string name="pemail">email</string>
     <string name="like">Like btn</string>
     <string name="menu_contacto">Contacto</string>

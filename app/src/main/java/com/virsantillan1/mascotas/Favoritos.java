@@ -53,11 +53,11 @@ public class Favoritos extends AppCompatActivity {
 
         mascotas = new ArrayList<>();
 
-        mascotas.add(new Mascota(R.drawable.dogperfil, "Felipe", "9"));
-        mascotas.add(new Mascota(R.drawable.cat2, "Odin", "7"));
-        mascotas.add(new Mascota(R.drawable.do1, "Ciro", "6"));
-        mascotas.add(new Mascota(R.drawable.dog2,"Ralf", "6"));
-        mascotas.add(new Mascota(R.drawable.dog3,"Hanna", "5"));
+        mascotas.add(new Mascota(R.drawable.dogperfil, "Felipe", 9));
+        mascotas.add(new Mascota(R.drawable.cat2, "Odin", 7));
+        mascotas.add(new Mascota(R.drawable.do1, "Ciro", 6));
+        mascotas.add(new Mascota(R.drawable.dog2,"Ralf", 6));
+        mascotas.add(new Mascota(R.drawable.dog3,"Hanna", 5));
     }
 
 

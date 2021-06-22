@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/star"
                 android:contentDescription="@string/app_name"
-                android:onClick="onClick" />
+                />
 
 
         </androidx.appcompat.widget.Toolbar>

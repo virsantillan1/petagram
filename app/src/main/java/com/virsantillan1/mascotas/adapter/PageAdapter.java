@@ -10,14 +10,12 @@ public class PageAdapter extends FragmentPagerAdapter {
 
     private ArrayList<Fragment> fragments;
 
-    public PageAdapter(@NonNull FragmentManager fm, ArrayList<Fragment> fragments){
+    public PageAdapter(FragmentManager fm, ArrayList<Fragment> fragments){
         super(fm);
 
         this.fragments = fragments;
     }
 
-
-    @NonNull
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);

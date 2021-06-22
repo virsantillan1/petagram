@@ -1,22 +1,37 @@
 package com.virsantillan1.mascotas.pojo;
 
-public class Mascota {
+import java.io.Serializable;
 
+public class Mascota implements Serializable {
+
+    private int id;
     private int foto;
     private String nombre;
-    private String rank;
+    private int rank;
 
 
     //Constructor
+    public Mascota() {
 
-    public Mascota(int foto, String nombre, String rank) {
+    }
+
+    public Mascota(int foto, String nombre, int rank) {
+        this.foto = foto;
         this.nombre = nombre;
         this.rank = rank;
-        this.foto = foto;
     }
 
 
+
     //Getters and Setters
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -26,14 +41,13 @@ public class Mascota {
         this.nombre = nombre;
     }
 
-    public String getRank() {
+    public int getRank() {
         return rank;
     }
 
-    public void setRank(String rank) {
+    public void setRank(int rank) {
         this.rank = rank;
     }
-
 
     public int getFoto() { return foto; }
 

@@ -10,41 +10,39 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.virsantillan1.mascotas.adapter.PageAdapter;
 import com.virsantillan1.mascotas.fragment.InicioFragment;
 import com.virsantillan1.mascotas.fragment.PerfilFragment;
+import com.virsantillan1.mascotas.pojo.Mascota;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
+
+        if(toolbar != null){
+            setSupportActionBar(toolbar);
+        }
+
         setUpViewPager();
 
     }
-
-    private ArrayList<Fragment> agregarFragments(){
-        ArrayList<Fragment> fragments = new ArrayList<>();
-
-        fragments.add(new InicioFragment());
-        fragments.add(new PerfilFragment());
-
-        return fragments;
-    }
-
 
     private void setUpViewPager(){
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
@@ -55,11 +53,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onClick(View v) {
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+
+        fragments.add(new InicioFragment());
+        fragments.add(new PerfilFragment());
+
+        return fragments;
+    }
+
+    private ArrayList<Mascota> listaMascotasFavoritas(){
+        ArrayList<Mascota> mascotas = new ArrayList<>();
+        return mascotas;
+    }
+
+
+   /* public void onClick(View v) {
 
         Intent intent = new Intent(MainActivity.this,Favoritos.class);
         startActivity(intent);
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu (Menu menu){
@@ -68,25 +81,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    @SuppressLint("NonConstantResourceId")
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.mContacto:
-                Intent intent = new Intent(this, ActivityContacto.class);
-                startActivity(intent);
-                break;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
-            case R.id.mAcerca:
-                intent = new Intent(this, ActivityAcerca.class);
-                startActivity(intent);
-                break;
+        if(id == R.id.rvFavoritos){
+
+            Intent intent = new Intent(this, Favoritos.class);
+
+            startActivity(intent);
+
+
+            return true;
         }
+
+
+
+        if(id == R.id.mContacto){
+            FormularioContacto(null);
+            return true;
+        }
+
+        if(id == R.id.mAcerca){
+            AcercaDe(null);
+            return true;
+        }
+
 
         return super.onOptionsItemSelected(item);
     }
 
+    public void FormularioContacto(View view){
+        Intent intent = new Intent(this, ActivityContacto.class);
+        startActivity(intent);
+    }
 
+    public void AcercaDe(View view){
+        Intent intent = new Intent(this, ActivityAcerca.class);
+        startActivity(intent);
+    }
 
 }
